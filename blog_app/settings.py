@@ -32,7 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     "blog",
-    'crispy_forms',
+    'crispy_forms', ###!!!crispy form installation
     "users",
     'django.contrib.admin',
     'django.contrib.auth',
@@ -125,4 +125,16 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+#changing profile_pic directory "media/profile_pics"
+import os
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
+### choosingbootstrap for the form
 CRISPY_TEMPLATE = 'bootstrap4'
+
+###!!! login 
+
+LOGIN_REDIRECT_URL ='blog-home'
+
+LOGIN_URL = 'login'
